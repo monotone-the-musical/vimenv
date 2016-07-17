@@ -13,7 +13,7 @@ for a in `ls -1 *.tgz`; do tar -zxvf $a; done
 
 rm -f *.tgz
 
-git clone --depth 1 git@github.com:junegunn/fzf.git ~/.fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 ~/.fzf/install
 
