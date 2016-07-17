@@ -17,6 +17,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 ~/.fzf/install
 
+cd -
+
 cp dotfile.fzf.bash ~/.fzf.bash
 
 cp dotfile.fzf-marks.plugin.bash ~/.fzf-marks.plugin.bash
