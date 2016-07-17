@@ -27,8 +27,7 @@ alias fuz='echo ; cat ~/.fzf.bash |grep -v alias |grep "()" | sed s/"() { #"/"\t
 
 fd() { # cd to selected directory
   local dir
-  dir=$(find ${1:-*} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
+  dir=$(find ${1:-*} -path '*/\.*' -prune -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir"
 }
 
@@ -38,8 +37,7 @@ fda() { # cd to directory including hidden directories
 }
 
 fe() { # edit file
-  IFS='
-'
+  IFS=''
   local declare files=($(fzf-tmux --query="$1" --select-1 --exit-0))
   [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
   unset IFS
@@ -66,6 +64,13 @@ ff() { # find file
 	find . -type f | fzf -m
 }
 
+fgd() { # grep directory
+  ls -la | fzf -m
+}
+
+fgdr() { # grep directory recursivly
+  ls -lRa | fzf -m
+}
 
 
 # Bookmarks script
