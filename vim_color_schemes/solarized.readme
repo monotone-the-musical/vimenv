@@ -1,5 +1,0 @@
-
-Add to .vimrc:
-
-let g:solarized_termcolors=256
-
