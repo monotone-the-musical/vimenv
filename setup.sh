@@ -42,11 +42,19 @@ else
   echo "colorscheme zenburn" >> ~/.vimrc
   echo ; echo ; echo "zenburn set as default"
   destdir=`find /usr/share -type f -name peachpuff.vim | sed s/"peachpuff.vim"/""/g`
-  echo ; echo "recomend copying zenburn to $destdir"
+  echo ; echo "want me to copy zenburn.vim to $destdir ? (y|N):"
+  read userinb
+  if [ "$userinb" != "y" ]
+  then
+    echo ; echo ; echo "ok not gonna copy" ; echo ; echo
+  else
+    cp vim_color_schemes/zenburn.vim $destdir
+    echo ; echo ; echo "ok copied" ; echo ; echo
+  fi
 fi
 echo ; echo ; echo
 echo "-------------------------------------------------------------------------------------------" ; echo
 echo "Setup complete. Re login then from vim run and run :PlugInstall to install any plugins."
 echo ; echo "-------------------------------------------------------------------------------------------"
 echo ; echo
-
+exit
