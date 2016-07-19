@@ -35,4 +35,4 @@ function dmark()  {
     echo ${marks_to_delete}
 }
 
-bind '"\C-g":"jump\n"'
+# bind '"\C-g":"jump\n"'
