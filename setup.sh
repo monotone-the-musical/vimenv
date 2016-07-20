@@ -23,6 +23,8 @@ cp dotfile.fzf.bash ~/.fzf.bash
 
 cp dotfile.fzf-marks.plugin.bash ~/.fzf-marks.plugin.bash
 
+cp dotfile.mymacros.bash ~/.mymacros.bash
+
 echo "Set color mode to 256? (y|N):"
 read userin
 if [ "$userin" != "y" ]

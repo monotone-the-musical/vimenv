@@ -75,4 +75,5 @@ fgdr() { # grep directory recursivly
 
 # Bookmarks script
 . ~/.fzf-marks.plugin.bash
+. ~/.mymacros.bash
 
