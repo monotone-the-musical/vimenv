@@ -12,7 +12,7 @@ function mark() {
 }
 
 fzfcmd() {
-   [ ${FZF_TMUX:-1} -eq 1 ] && echo "fzf-tmux -d${FZF_TMUX_HEIGHT:-40%}" || echo "fzf"
+   [ ${FZF_TMUX:-1} -eq 1 ] && echo "fzf-tmux -d${FZF_TMUX_HEIGHT:-40%} --reverse" || echo "fzf"
 }
 
 function jj() {
