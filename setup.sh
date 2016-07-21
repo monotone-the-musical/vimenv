@@ -25,16 +25,6 @@ cp dotfile.fzf-marks.plugin.bash ~/.fzf-marks.plugin.bash
 
 cp dotfile.mymacros.bash ~/.mymacros.bash
 
-echo "Set color mode to 256? (y|N):"
-read userin
-if [ "$userin" != "y" ]
-then
-  echo "not setting"
-else
-  echo "export TERM=xterm-256color" >> ~/.bashrc
-  echo ; echo "256 color set" ; echo ; echo
-fi
-
 echo "Set zenburn to default color-scheme? (y|N):"
 read userin
 if [ "$userin" != "y" ]
@@ -42,17 +32,10 @@ then
   echo "not setting"
 else
   echo "colorscheme zenburn" >> ~/.vimrc
+  mkdir -p ~/.vim/colors/
+  cp vim_color_schemes/zenburn.vim ~/.vim/colors/
+  echo "export TERM=xterm-256color" >> ~/.bashrc
   echo ; echo ; echo "zenburn set as default"
-  destdir=`find /usr/share -type f -name peachpuff.vim | sed s/"peachpuff.vim"/""/g`
-  echo ; echo "want me to copy zenburn.vim to $destdir ? (y|N):"
-  read userinb
-  if [ "$userinb" != "y" ]
-  then
-    echo ; echo ; echo "ok not gonna copy" ; echo ; echo
-  else
-    cp vim_color_schemes/zenburn.vim $destdir
-    echo ; echo ; echo "ok copied" ; echo ; echo
-  fi
 fi
 echo ; echo ; echo
 echo "-------------------------------------------------------------------------------------------" ; echo
