@@ -18,7 +18,6 @@ fzfcmdmacro() {
 }
 
 function mac() {
-    #local jumpline=$(ls ${MACROS_DIR} | $(fzfcmdmacro) --bind=ctrl-y:accept --tac)
     local jumpline=$(ls ${MACROS_DIR} | awk '{print $1}' | xargs -I {} bash -c "echo -n '{}  -->  ' ; head -1 ${MACROS_DIR}/{}" | $(fzfcmdmacro) --bind=ctrl-y:accept --tac)
     if [[ -n ${jumpline} ]]; then
         /bin/bash ${MACROS_DIR}/$jumpline
