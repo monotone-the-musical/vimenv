@@ -18,16 +18,16 @@ fzfcmdmacro() {
 }
 
 function mac() {
-    local jumpline=$(ls ${MACROS_DIR} | awk '{print $1}' | xargs -I {} bash -c "echo -n '{}  -->  ' ; head -1 ${MACROS_DIR}/{}" | $(fzfcmdmacro) --bind=ctrl-y:accept --tac)
-    if [[ -n ${jumpline} ]]; then
-        /bin/bash ${MACROS_DIR}/$jumpline
+    local themac=$(ls ${MACROS_DIR} | awk '{print $1}' | xargs -I {} bash -c "echo -n '{}  -->  ' ; head -1 ${MACROS_DIR}/{}" | $(fzfcmdmacro) --bind=ctrl-y:accept --tac)
+    if [[ -n ${themac} ]]; then
+        /bin/bash ${MACROS_DIR}/$themac
     fi
 }
 
 function vimac() {
-    local jumpline=$(ls ${MACROS_DIR} | $(fzfcmdmacro) --bind=ctrl-y:accept --tac)
-    if [[ -n ${jumpline} ]]; then
-        vim ${MACROS_DIR}/$jumpline
+    local themac=$(ls ${MACROS_DIR} | $(fzfcmdmacro) --bind=ctrl-y:accept --tac)
+    if [[ -n ${themac} ]]; then
+        vim ${MACROS_DIR}/$themac
     fi
 }
 
