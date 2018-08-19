@@ -6,5 +6,6 @@ git clone --depth=1 https://github.com/vim-scripts/goyo.vim.git
 git clone --depth=1 https://github.com/vim-scripts/mru.vim.git
 git clone --depth=1 https://github.com/scrooloose/nerdtree.git
 git clone --depth=1 https://github.com/tpope/vim-fugitive.git
+git clone --depth=1 https://github.com/vim-scripts/ctrlp.vim.git
 
 exit

@@ -13,3 +13,6 @@ set expandtab
 
 execute pathogen#infect()
 
+map 'm :Mru<cr>
+map 'n :NERDTree<cr>
+map 'f :Goyo<cr>
