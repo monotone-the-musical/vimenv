@@ -1,0 +1,21 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=4785
+
+goyo.vim (고요)
+===============
+
+Distraction-free writing in Vim.
+
+Project Home: https://github.com/junegunn/goyo.vim
+Screenshot: https://raw.github.com/junegunn/i/master/goyo.png
+
+Usage
+-----
+
+:Goyo [width]
+
+Configuration
+-------------
+
+- g:goyo_width (default: 80)
+- g:goyo_margin_top (default: 4)
+- g:goyo_margin_bottom (default: 4)
