@@ -16,3 +16,10 @@ execute pathogen#infect()
 map 'm :Mru<cr>
 map 'n :NERDTree<cr>
 map 'f :Goyo<cr>
+
+let goyo_width = 120
+let goyo_margin_top = 2
+let goyo_margin_bottom = 2
+
+set splitbelow
+set splitright
