@@ -52,7 +52,3 @@ map <C-k> <C-w>+
 map <C-l> <C-w>>
 map <C-h> <C-w><
 
-" Remove the Windows ^M - when encoding messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-
-
