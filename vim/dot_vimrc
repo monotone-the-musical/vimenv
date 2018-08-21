@@ -5,21 +5,54 @@ syntax on
 filetype on
 filetype plugin on
 
-set tabstop=2
+" 1 tab == 2 spaces
 set shiftwidth=2
+set tabstop=2
 set softtabstop=2
+
+set ai "Auto indent
+set si "Smart indent
+
+" use smart tabs
 set smarttab
+
+" use spaces instead of tabs
 set expandtab
 
 execute pathogen#infect()
 
-map 'm :Mru<cr>
-map 'n :NERDTree<cr>
-map 'f :Goyo<cr>
+let mapleader = ","
 
+nmap <leader>m :Mru<cr>
+nmap <leader>n :NERDTree<cr>
+nmap <leader>f :Goyo<cr>
+nmap <leader>q :wq!<cr>
+
+" Configure Goyo screensize
 let goyo_width = 120
 let goyo_margin_top = 2
 let goyo_margin_bottom = 2
 
+" New windows got to the right and below
 set splitbelow
 set splitright
+
+" Highlight search results
+set hlsearch
+
+" Show matching brackets
+set showmatch 
+
+" Disable highlight when <leader><cr> is pressed
+map <silent> <leader><cr> :noh<cr>
+
+" Smart way to resize windows
+map <C-j> <C-w>-
+map <C-k> <C-w>+
+map <C-l> <C-w>>
+map <C-h> <C-w><
+
+" Remove the Windows ^M - when encoding messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+
