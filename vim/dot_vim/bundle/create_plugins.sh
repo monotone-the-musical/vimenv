@@ -8,5 +8,6 @@ git clone --depth=1 https://github.com/scrooloose/nerdtree.git
 git clone --depth=1 https://github.com/tpope/vim-fugitive.git
 git clone --depth=1 https://github.com/vim-scripts/ctrlp.vim.git
 git clone --depth=1 https://github.com/rodjek/vim-puppet.git
+git clone --depth=1 https://github.com/monotone-the-musical/vim-versioner.git
 
 exit
