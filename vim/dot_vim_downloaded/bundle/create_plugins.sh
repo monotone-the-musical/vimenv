@@ -10,4 +10,9 @@ git clone --depth=1 https://github.com/vim-scripts/ctrlp.vim.git
 git clone --depth=1 https://github.com/rodjek/vim-puppet.git
 git clone --depth=1 https://github.com/monotone-the-musical/vim-versioner.git
 
+# testing
+git clone --depth=1 https://github.com/tomtom/tlib_vim.git
+git clone --depth=1 https://github.com/MarcWeber/vim-addon-mw-utils.git
+git clone --depth=1 https://github.com/garbas/vim-snipmate.git
+
 exit

@@ -11,12 +11,15 @@
 "       - to list any backups of current file
 "
 "     :Vs -b [OPTIONAL_COMMENT]
-"       - to backup current file with an optional comment
+"       - to backup current file with an optional comment.
 "       - note: comment does not require -c parameter as used in 
 "         the stand-alone Versioner utility.
 "
 "     :Vs -d
-"       - to delete any previously created backups.
+"       - to delete any previously created backups of current file.
+"
+"     :Vs -r
+"       - to restore a previously backed up version of current file.
 "
 " Requirements and restrictions :
 "
@@ -27,9 +30,11 @@
 "       is by design, so that you can backup your file before you
 "       save any changes you've already made.
 "
-"     - You cannot restore files via the plugin. You still need 
-"       to use the stand-alone Versioner utility for that (run 
-"       'vs -h' from the CLI for syntax).
+"     - When restoring, any un-saved changes in the buffer will be 
+"       lost! If changes in the buffer have been saved to disk, but 
+"       the saved file has not been backed up by Versioner, then 
+"       Versioner will automatically backup the new file with the
+"       comment 'autosaved' before presenting a restore menu.
 "
 
 if !has('python')
@@ -85,6 +90,16 @@ if vimarg1 == "-d":
     print "aborted"
   vim.command("redraw!") # redraw as screen gets garbled
   
+if vimarg1 == "-r":
+  thefile = versioner.loadfile(currentfile,"","autosaved")
+  wrote = thefile.backup()
+  vim.command("edit!") # refresh from disk
+  try:
+    thefile.restore_backup_by_name()
+    vim.command("edit!") # refresh from disk
+  except:
+    print "aborted"
+ 
 EOF
 "----------- END PYTHON -----------------------
 
