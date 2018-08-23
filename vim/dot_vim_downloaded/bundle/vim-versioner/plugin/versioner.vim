@@ -93,12 +93,12 @@ if vimarg1 == "-d":
 if vimarg1 == "-r":
   thefile = versioner.loadfile(currentfile,"","autosaved")
   wrote = thefile.backup()
-  vim.command("edit!") # refresh from disk
   try:
     thefile.restore_backup_by_name()
     vim.command("edit!") # refresh from disk
   except:
     print "aborted"
+  vim.command("redraw!") # redraw as screen gets garbled
  
 EOF
 "----------- END PYTHON -----------------------
