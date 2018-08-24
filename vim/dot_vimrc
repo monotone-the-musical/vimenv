@@ -20,8 +20,8 @@ set smarttab
 set expandtab
 
 " auto save and auto load views
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview 
+autocmd BufWinLeave * mkview
+autocmd BufWinEnter * silent loadview 
 
 execute pathogen#infect()
 
