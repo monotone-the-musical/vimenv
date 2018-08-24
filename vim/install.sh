@@ -1,5 +1,10 @@
 #!/bin/sh
 
+if [ "$1" == "del" ]
+then
+  rm -rf ~/.vim_backup.*
+fi
+
 backupdir=".vim_backup.`date +%Y%m%d`"
 
 mkdir -p ~/${backupdir}
