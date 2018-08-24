@@ -1,0 +1,20 @@
+
+snippet if
+	if ${1:\$somevar} == '${2:true}' {
+		${3:#some_logic}
+	}
+
+snippet case
+	case ${1:\$fqdn} {
+
+		"${2:fqdn.qbe.com.au}"
+		: {
+			${3:#mainlogic}
+		}
+
+		default : {
+			${4:#default_logic}
+		}
+
+	}
+

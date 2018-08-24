@@ -1,0 +1,27 @@
+
+snippet #!
+	#!/bin/sh
+
+snippet if
+	if [ ${1:condition} ]
+	then
+		${0:#statements}
+	fi
+
+snippet elif
+	elif [ ${1:condition} ]
+	then
+		${0:#statements}
+	fi
+
+snippet else
+	else
+		${0:#statements}
+	fi
+
+snippet while
+	while read ${1:#recordname}
+	do
+		${2:echo \$$1}
+	done < ${3:$somefile}
+
