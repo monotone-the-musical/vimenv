@@ -20,8 +20,8 @@ set smarttab
 set expandtab
 
 " auto save and auto load views
-autocmd BufWinLeave * mkview
-autocmd BufWinEnter * silent loadview 
+autocmd BufWinLeave ?* mkview
+autocmd BufWinEnter ?* silent loadview
 
 execute pathogen#infect()
 
@@ -50,7 +50,7 @@ set showmatch
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to resize windows
+" easy resize windows
 map <C-j> <C-w>-
 map <C-k> <C-w>+
 map <C-l> <C-w>>
