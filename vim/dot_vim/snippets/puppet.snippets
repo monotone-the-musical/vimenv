@@ -18,3 +18,24 @@ snippet case
 
 	}
 
+snippet cron
+	cron { '${1:#cron_schedule_name}':
+		command  => "${2:#somescript} > /tmp/${2:#some_log}.log 2>&1",
+		ensure   => present,
+		user     => root,
+		month    => "*",
+		monthday => "*",
+		weekday  => "*",
+		hour     => "*",
+		minute   => "*",
+	}	
+
+snippet file
+	file { '${1:#the_file_name}':
+		ensure 	=>  present,
+		mode 		=>  '0600',
+		owner 	=>  'root',
+		group 	=>  'root',
+		source 	=>	"puppet:///modules/${2:#module_name}/source.file",
+	}
+
