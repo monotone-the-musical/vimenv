@@ -2,7 +2,7 @@
 
 if [ "$1" == "del" ]
 then
-  rm -rf ~/.vim_backup.*
+  rm -rf ~/.vim_backup.* 2>/dev/null
 fi
 
 backupdir=".vim_backup.`date +%Y%m%d`"
