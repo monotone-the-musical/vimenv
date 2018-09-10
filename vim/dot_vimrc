@@ -19,6 +19,9 @@ set smarttab
 " use spaces instead of tabs
 set expandtab
 
+" python specific catch-all
+autocmd FileType python set tabstop=4|set shiftwidth=4|set softtabstop=4
+
 " auto save and auto load views
 autocmd BufWinLeave ?* mkview
 autocmd BufWinEnter ?* silent loadview
