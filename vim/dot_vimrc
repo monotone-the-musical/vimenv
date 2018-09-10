@@ -34,6 +34,8 @@ nmap <leader>m :Mru<cr>
 nmap <leader>n :NERDTree<cr>
 nmap <leader>f :Goyo<cr>
 nmap <leader>q :wq!<cr>
+nmap <leader>i :set foldmethod=indent<cr>
+nmap <leader>u :set foldmethod=manual<cr>
 
 " Configure Goyo screensize
 let goyo_width = 120
